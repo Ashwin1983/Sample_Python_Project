@@ -1,5 +1,3 @@
 to just stash an untracked file
 
 Practicing git reset and revert
-
-Successfully done Reset and now checking revert
