@@ -1,1 +1,3 @@
 to just stash an untracked file
+
+Practicing git reset and revert
