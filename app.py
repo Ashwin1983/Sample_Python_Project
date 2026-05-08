@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template_string, request, flash
 
 app = Flask(__name__)
 
@@ -65,9 +65,13 @@ HTML_PAGE = """
         <button type="submit">Login</button>
     </form>
 
-    {% if message %}
-        <div class="message">{{ message }}</div>
-    {% endif %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 </div>
 
 </body>
@@ -84,9 +88,9 @@ def login():
 
         # Simple hardcoded login validation
         if username == "admin" and password == "admin123":
-            message = "Login Successful!"
+            message = flash("Login Successful!", "success")
         else:
-            message = "Invalid Username or Password"
+            message = flash("Invalid credentials", "danger")
 
     return render_template_string(HTML_PAGE, message=message)
 
