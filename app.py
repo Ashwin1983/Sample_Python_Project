@@ -7,7 +7,7 @@ HTML_PAGE = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Login</title>
+    <title>Simple Login Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
