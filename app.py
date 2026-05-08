@@ -94,5 +94,10 @@ def login():
 
     return render_template_string(HTML_PAGE, message=message)
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)
