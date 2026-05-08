@@ -1,7 +1,8 @@
 # app.py
-from flask import Flask, render_template_string, request, flash
+from flask import Flask, render_template_string, request, flash, session
 
 app = Flask(__name__)
+session["user"] = username
 
 HTML_PAGE = """
 <!DOCTYPE html>
