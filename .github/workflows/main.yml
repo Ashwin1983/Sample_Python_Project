@@ -1,0 +1,16 @@
+name: Read File Manually
+
+on:
+  workflow_dispatch:
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Reository
+        uses: actions/checkout@v4
+
+      - name: Read stash.txt
+        run: cat stash.txt
+        
